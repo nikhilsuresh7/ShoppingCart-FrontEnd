@@ -27,15 +27,16 @@ public class HomeController {
 	@Autowired
 	UserDAO userDAO;
 
-	@RequestMapping("/")
+/*	@RequestMapping(value={"","/","home"})*/
+	@RequestMapping(value={"/", "/home"})
 	public ModelAndView home(){
 		ModelAndView mv =new ModelAndView("/home");
 		
 		return mv;
 	}
 	
-	@RequestMapping(value = "user/register", method = RequestMethod.POST)
-	public ModelAndView registerUser(@ModelAttribute User user) {
+	@RequestMapping(value = "/register", method = RequestMethod.POST)
+	public ModelAndView register(@ModelAttribute User user) {
 		userDAO.saveOrUpdate(user);
 		ModelAndView mv  = new ModelAndView("/home");
 		mv.addObject("registerMessage", "You are successfully registered");
@@ -51,6 +52,7 @@ public class HomeController {
 //		mv.addObject("message", "You are successfully registered");
 		return mv;
 	}
+	
 	@RequestMapping("/loginHere")
 	public ModelAndView loginHere(){
 		ModelAndView mv =new ModelAndView("/login");

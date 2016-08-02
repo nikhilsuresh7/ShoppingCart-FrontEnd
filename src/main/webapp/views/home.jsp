@@ -1,31 +1,44 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+	pageEncoding="ISO-8859-1"%>
+<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
+<%@ taglib uri="http://www.springframework.org/tags" prefix="spring"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+
+<!DOCTYPE html>
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
+<title>Home Page</title>
+
+<link rel="stylesheet"
+	href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+<link href="resources/css/style.css" rel="stylesheet">
+
+<style>
+.container {
+	background-color: #000;
+	overflow: auto;
+}
+</style>
+
 </head>
 <body>
-<div class="container">
+	<div class="container">
 
-<div class="row">
-	<div class="page-header">
-		<div class="col-md-8">
-		<h1> Welcome to BeatMe </h1>
-		<p> Everything you'll need to Beat your mate. </p>
-		</div>
-	
-		<div class="col-md-4">
-		<table align="right">
-			<tr>
-			<td><a href= "loginHere"> Login </a></td>
-			<td><a href="registerHere"> Register </a></td>
-			</tr>
-		</table>
-		</div>
+		<%@include file="common/header.jsp"%>
+		<br>
+		<%@include file="common/homecarousal.jsp"%>
+		<br>
+		<%@include file="common/featured.jsp"%>
+		<br>
+		<%@include file="common/footer.jsp"%>
+
 	</div>
-</div>	
-</div>
+
+	<script
+		src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<script
+		src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
 </body>
 </html>
