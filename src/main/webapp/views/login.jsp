@@ -38,7 +38,7 @@
 	<div class=container>
 
 		<%@include file="common/header.jsp"%>
-
+		${message }
 		<div class=logform>
 			<!-- Complete Form  -->
 

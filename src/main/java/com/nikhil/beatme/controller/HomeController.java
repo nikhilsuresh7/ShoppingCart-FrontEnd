@@ -38,9 +38,8 @@ public class HomeController {
 	@RequestMapping(value = "/register", method = RequestMethod.POST)
 	public ModelAndView register(@ModelAttribute User user) {
 		userDAO.saveOrUpdate(user);
-		ModelAndView mv  = new ModelAndView("/home");
-		mv.addObject("registerMessage", "You are successfully registered");
-		
+		ModelAndView mv  = new ModelAndView("/login");
+		mv.addObject("message", "You are successfully registered. Kindly Login.");
 		return mv;
 	}	
 	
@@ -49,7 +48,6 @@ public class HomeController {
 		ModelAndView mv =new ModelAndView("/register");
 		mv.addObject("user", user);
 		mv.addObject("isUserClickedRegisterHere", "true");
-//		mv.addObject("message", "You are successfully registered");
 		return mv;
 	}
 	
@@ -58,7 +56,6 @@ public class HomeController {
 		ModelAndView mv =new ModelAndView("/login");
 		mv.addObject("user", new User());
 		mv.addObject("isUserClickedLoginHere", "true");
-//		mv.addObject("message", "You are successfully logged in");
 		return mv;
 	}
 	

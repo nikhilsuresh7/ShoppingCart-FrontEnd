@@ -35,24 +35,27 @@ public class UserController {
 			 @RequestParam(value = "password") String password,
 			HttpSession session) {
 		
-		ModelAndView mv = new ModelAndView("/home");
+		ModelAndView mv = new ModelAndView("/welcome");
 		boolean isValidUser = userDAO.isValidUser(userID, password);
 		
 		if (isValidUser == true) {
-			System.out.println("Logged In");
 			user = userDAO.get(userID);
 			session.setAttribute("loggedInUser", user.getName());
+			System.out.println("Hi " + user.getName());
+			mv.addObject("message", "You are successfully logged in");
+
 			if (user.getAdmin() == 1) {
-				System.out.println("Admin");
 				mv.addObject("isAdmin", "true");
 			} else {
-				System.out.println("User");
 				mv.addObject("isAdmin", "false");
 			}
+
 		} else {
-			System.out.println("Invalid Credentials");
 			mv.addObject("invalidCredentials", "true");
-			mv.addObject("errorMessage", "Invalid Credentials");
+			mv.addObject("message", "Invalid Credentials");
+			System.out.println("Invalid Credentials");
+/*			System.out.println("<script>alert('Login fail.')</script>");*/
+			mv = new ModelAndView("/login");
 		}
 		
 		return mv;
@@ -66,7 +69,7 @@ public class UserController {
 //		session.setAttribute("category", category);
 //		session.setAttribute("categoryList", categoryDAO.list());
 		
-		mv.addObject("logoutMessage", "You are successfully logged out");
+		mv.addObject("message", "You are successfully logged out");
 		mv.addObject("loggedOut", "true");
 		
 		return mv;

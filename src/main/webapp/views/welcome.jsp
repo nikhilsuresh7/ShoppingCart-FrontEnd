@@ -25,7 +25,8 @@
 <body>
 	<div class="container">
 
-		<%@include file="common/header.jsp"%>
+		<%@include file="common/header2.jsp"%>
+		${message}
 		<%@include file="common/homecarousal.jsp"%>
 		<%@include file="common/featured.jsp"%>
 		<%@include file="common/footer.jsp"%>

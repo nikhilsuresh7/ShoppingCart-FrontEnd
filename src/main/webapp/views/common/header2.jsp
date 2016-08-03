@@ -37,9 +37,20 @@
 							<li><a href="#">Joystick</a></li>
 							<li><a href="#">Headset</a></li>
 						</ul></li>
-					<li><a href="loginHere">Login</a></li>
-					<li><a href="registerHere">Register</a></li>
-					<li><a href="#">Contact</a></li>
+
+					<c:choose>
+						<c:when test="${empty loggedInUser}">
+							<li><a href="login" class="glyphicon glyphicon-log-in">Login</a></li>
+						</c:when>
+						<c:when test="${not empty loggedInUser}">
+							<li><a href="login">Hi <span
+									class="glyphicon glyphicon-user">${loggedInUser}
+								</span> </a></li>
+							<li><a href="logout"><span
+									class="glyphicon glyphicon­log­out">Logout</span> </a></li>
+						</c:when>
+					</c:choose>
+
 				</ul>
 			</div>
 

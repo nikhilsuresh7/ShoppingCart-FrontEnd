@@ -5,12 +5,8 @@
 <style>
 .carousel-inner>.item>img {
 	margin: 0 auto;
-/* 	width: 730px;
-	height: 300px;
- */
 	width: 803px;
 	height: 330px;
-	
 }
 </style>
 
@@ -34,12 +30,6 @@
 				<img src="resources/images/carousel1.jpg" alt="Slider"
 					class="img-responsive" />
 				<div class="carousel-caption text-center hidden-xs">
-					<!-- 
-						<h1>Full Frame Nikon SLR Cameras</h1>
-						<p>
-							Lorem Ipsum is simply dummy text of the printing<br> and typesetting industry.
-						</p>
- -->
 					<h2>
 						Starts From <span>$33.33</span>
 					</h2>
@@ -49,12 +39,6 @@
 				<img src="resources/images/carousel2.jpg" alt="Slider"
 					class="img-responsive" />
 				<div class="carousel-caption text-center hidden-xs">
-					<!--
-						<h1>Hobby Hub</h1>
-						<p>
-							Lorem Ipsum is simply dummy text of the printing<br> and typesetting industry.
-						</p>
--->
 					<h2>
 						Starts From <span>$20.99</span>
 					</h2>
@@ -65,12 +49,6 @@
 				<img src="resources/images/carousel3.jpg" alt="Slider"
 					class="img-responsive" />
 				<div class="carousel-caption text-center hidden-xs">
-					<!-- 
-						<h1>Full Frame Canon DSLR Cameras</h1>
-						<p>
-							Lorem Ipsum is simply dummy text of the printing<br> and typesetting industry.
-						</p>
- -->
 					<h2>
 						Starts From <span>$56.99</span>
 					</h2>
